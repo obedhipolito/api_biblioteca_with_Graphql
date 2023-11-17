@@ -9,6 +9,7 @@ import biblioteca.schemas.reservaSchema
 import biblioteca.schemas.coleccionSchema
 import biblioteca.schemas.inventarioSchema
 import biblioteca.schemas.catalogoSchema
+import biblioteca.schemas.misCosasSchema
 
 
 class Query(biblioteca.schemas.autorSchema.Query,
@@ -18,6 +19,7 @@ class Query(biblioteca.schemas.autorSchema.Query,
             biblioteca.schemas.coleccionSchema.Query,
             biblioteca.schemas.inventarioSchema.Query,
             biblioteca.schemas.catalogoSchema.Query,
+            biblioteca.schemas.misCosasSchema.Query,
             graphene.ObjectType):
     pass
 
@@ -28,6 +30,7 @@ class Mutation(biblioteca.schemas.autorSchema.Mutation,
                 biblioteca.schemas.coleccionSchema.Mutation,
                 biblioteca.schemas.inventarioSchema.Mutation,
                 biblioteca.schemas.catalogoSchema.Mutation,
+                biblioteca.schemas.misCosasSchema.Mutation,
                 graphene.ObjectType):
     token_auth = graphql_jwt.ObtainJSONWebToken.Field()
     verify_token = graphql_jwt.Verify.Field()

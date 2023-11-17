@@ -40,11 +40,11 @@ class Query(graphene.ObjectType):
     UsuarioActivo = graphene.Field(UsuarioType)
     Usuario = graphene.List(UsuarioType)
 
-    def resolve_usuario(self, info):
+    def resolve_Usuario(self, info):
         return get_user_model().objects.all()
     
-    def resolve_usuarioActivo(self, info):
-        Usuario = info.context.user
-        if Usuario.is_anonymous:
+    def resolve_UsuarioActivo(self, info):
+        usuario = info.context.user
+        if usuario.is_anonymous:
             raise Exception('no estas logueado')
-        return Usuario
+        return usuario

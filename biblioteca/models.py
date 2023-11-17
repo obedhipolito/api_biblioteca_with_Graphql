@@ -78,3 +78,9 @@ class Reserva(models.Model):
     id_coleccion = models.ForeignKey(Coleccion, null=True, on_delete=models.CASCADE)
     fechaReserva = models.DateField(default='', blank=False)
     estadoReserva = models.TextField(default='', blank=False)
+
+class misCosas(models.Model):
+    id_usuario = models.ForeignKey(Usuario, null=True, on_delete=models.CASCADE)
+    id_coleccion = models.ForeignKey(Coleccion, null=True, on_delete=models.CASCADE)
+    fechaAdquisicion = models.DateField(default='', blank=False)
+    
