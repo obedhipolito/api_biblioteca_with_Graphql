@@ -53,6 +53,7 @@ class Coleccion(models.Model):
     estado = models.TextField(default='', blank=False)
     ubicacioEnBiblioteca = models.TextField(default='', blank=False)
     precio = models.FloatField(default='', blank=False)
+    urlImagen = models.TextField(default='', blank=False)
 
 class Inventario(models.Model):
     id_Coleccion = models.ForeignKey(Coleccion, null=True, on_delete=models.CASCADE)
